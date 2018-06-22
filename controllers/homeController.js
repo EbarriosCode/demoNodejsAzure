@@ -1,10 +1,10 @@
-var Model = require('../models/modelTest'),
-    inst = new Model();
+//var Model = require('../models/modelTest'),
+//    inst = new Model();
 
 class Index{
     // funciones del controller
    
-    IndexGet(req,res,next){
+    /*IndexGet(req,res,next){
         inst.IndexPost((error,data)=>{
             if(!error){
                 if(data.length > 0){
@@ -13,6 +13,10 @@ class Index{
                 }                    
             }
         });
+    }*/
+
+    IndexGetTest(req,res,next){
+        res.render('lista',{titulo:'datos'});        
     }
 }
 

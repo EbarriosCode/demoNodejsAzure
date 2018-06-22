@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var homeController = require('./controllers/homeController');
 var home = new homeController();
-app.get('/',home.IndexGet);
+app.get('/',home.IndexGetTest);
 
 app.listen(port, function () {
   console.log('Server Express corriendo en el puerto '+port);
