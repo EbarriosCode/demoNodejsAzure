@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -23,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var homeController = require('./controllers/homeController');
 var home = new homeController();
-
 app.get('/',home.IndexGet);
 
 app.listen(port, function () {
