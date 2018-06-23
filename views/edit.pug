@@ -1,0 +1,17 @@
+extends template/layout
+block content
+    br
+    .container
+        .row        
+            form(method="post",action="/EditPost")
+                br
+                input(type='hidden',value=data[0].PersonajeId, name="id",required)
+                .form-group
+                    label(for='nombre') Nombre
+                    input#nombre.form-control(type='text',name="nombre",value=data[0].Nombre,required)
+                                
+                .form-group
+                    label(for='descripcion') Descripción
+                    textarea#descripcion.form-control(name="descripcion")=data[0].Descripcion            
+                              
+                button.btn.btn-success(type='submit') Editar

@@ -1,11 +1,22 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    title= title
-  body
-    div(class='container-fluid',id='contenedor')
-      h1.text-center NodeJs - Azure
-      
+extends template/layout
+block content
+    main(role='main')
+        section.jumbotron.text-center
+            .container
+            h1.jumbotron-heading Demo NodeJS
+            
+        .album.py-5.bg-light
+            .container
+                .row
+                    each personaje in data
+                        .col-md-4
+                            .card.mb-4.box-shadow
+                                img.card-img-top(src=personaje.RutaFoto, alt='Card image cap',style=("width:350px; height:250px;"))
+                                .card-body
+                                    h3(class="text-center")=personaje.Nombre
+                                    p.card-text=personaje.Descripcion
+                                    .d-flex.justify-content-between.align-items-center                            
+                                        a.btn.btn-sm.btn-outline-secondary(href="/Delete/"+personaje.PersonajeId) Eliminar
+                                        a.btn.btn-sm.btn-outline-secondary(href="/Edit/"+personaje.PersonajeId) Editar               
+
+                                        
